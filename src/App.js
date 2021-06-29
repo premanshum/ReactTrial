@@ -1,4 +1,4 @@
-import ExpenseList from "./components/Expenses/ExpenseList";
+import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 import { useState } from "react";
 
@@ -32,7 +32,6 @@ let DUMMY_EXPENSES = [
 
 function App() {
 
-  let selYear = 0;
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
 
   const addExpenseHandler = (expense) => {
@@ -42,22 +41,12 @@ function App() {
         ...prevState
       ]
     });
-    console.log("Inside App");
-    console.log(expenses);
   };
-
-  const filterHandler = (selectedYear) =>{
-    selYear = selectedYear;
-    console.log("Inside App:", selectedYear);
-    const filteredExpense = expenses.filter(item => (new Date(item.date)).getFullYear().toString() === selYear.toString());
-    console.log('filteredExpense :', filteredExpense);
-    setExpenses(filteredExpense);
-  }
 
   return (
     <div>
       <NewExpense onAddExpense = {addExpenseHandler}></NewExpense>
-      <ExpenseList expenses={expenses} onFilter={filterHandler}></ExpenseList>
+      <Expenses expenses={expenses}></Expenses>
     </div>
   );
 }
