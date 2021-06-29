@@ -26,7 +26,7 @@
   }
   
   .expense-item__price {
-    font-size: 1rem;
+    font-size: 2rem;
     font-weight: bold;
     color: white;
     background-color: #40005d;
@@ -44,11 +44,11 @@
     }
   
     .expense-item__description h2 {
-      font-size: 1.25rem;
+      font-size: 0.75rem;
     }
   
     .expense-item__price {
-      font-size: 1.25rem;
+      font-size: 0.75rem;
       padding: 0.5rem 1.5rem;
     }
   }

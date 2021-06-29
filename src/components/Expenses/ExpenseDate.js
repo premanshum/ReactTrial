@@ -11,9 +11,9 @@ function ExpenseDate(prop) {
 
   return (
     <div className="expense-date">
-      <div className="expense-date__month">{month}</div>
+      <div className="expense-date__month">{month}-{year}</div>
       <div className="expense-date__day">{day}</div>
-      {time}
+      <div className="expense-date__time">{time}</div>      
     </div>
   );
 }
