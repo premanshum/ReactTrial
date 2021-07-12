@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prem.N3.UserSubscription", "Prem.N3.UserSubscription\Prem.N3.UserSubscription.csproj", "{5667D7C5-C645-4CE0-B6DD-B5892AA0BCD1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Prem.N3.UserSubscription.Test", "Prem.N3.UserSubscription.Test\Prem.N3.UserSubscription.Test.csproj", "{4AAD9C1F-CFB7-43CD-A421-13D8FBFA3F1D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5667D7C5-C645-4CE0-B6DD-B5892AA0BCD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5667D7C5-C645-4CE0-B6DD-B5892AA0BCD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5667D7C5-C645-4CE0-B6DD-B5892AA0BCD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5667D7C5-C645-4CE0-B6DD-B5892AA0BCD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AAD9C1F-CFB7-43CD-A421-13D8FBFA3F1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AAD9C1F-CFB7-43CD-A421-13D8FBFA3F1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AAD9C1F-CFB7-43CD-A421-13D8FBFA3F1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AAD9C1F-CFB7-43CD-A421-13D8FBFA3F1D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4D0D7F5C-77C6-432F-ACE2-F03C1E3666F6}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://sede-ds-adp.visualstudio.com/
+		SccProjectUniqueName0 = Prem.N3.UserSubscription\\Prem.N3.UserSubscription.csproj
+		SccProjectName0 = Prem.N3.UserSubscription
+		SccLocalPath0 = Prem.N3.UserSubscription
+		SccLocalPath1 = .
+		SccProjectUniqueName2 = Prem.N3.UserSubscription.Test\\Prem.N3.UserSubscription.Test.csproj
+		SccProjectName2 = Prem.N3.UserSubscription.Test
+		SccLocalPath2 = Prem.N3.UserSubscription.Test
+	EndGlobalSection
+EndGlobal
