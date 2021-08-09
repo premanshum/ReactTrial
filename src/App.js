@@ -1,5 +1,7 @@
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
+import AddUser from "./components/AddUser/AddUser";
+import UserList from './components/UserList/UserList';
 import { useState } from "react";
 
 let DUMMY_EXPENSES = [
@@ -32,23 +34,39 @@ let DUMMY_EXPENSES = [
 
 function App() {
 
-  const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
+  //const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
 
-  const addExpenseHandler = (expense) => {
-    setExpenses((prevState)=>{
-      return [
-        expense,
-        ...prevState
-      ]
+  // const addExpenseHandler = (expense) => {
+  //   setExpenses((prevState)=>{
+  //     return [
+  //       expense,
+  //       ...prevState
+  //     ]
+  //   });
+  // };
+
+  const [userList, setUserList] = useState([]);
+
+  const addUserHandler = (newUser) => {
+    setUserList((prevState)=>{
+      return [...prevState, newUser];
     });
-  };
+  }
 
-  return (
+  return(
     <div>
-      <NewExpense onAddExpense = {addExpenseHandler}></NewExpense>
-      <Expenses expenses={expenses}></Expenses>
+      <AddUser onAddUser={addUserHandler}></AddUser>
+      <UserList users={userList}></UserList>
     </div>
   );
+
+
+  // return (
+  //   <div>
+  //     <NewExpense onAddExpense = {addExpenseHandler}></NewExpense>
+  //     <Expenses expenses={expenses}></Expenses>
+  //   </div>
+  // );
 }
 
 export default App;

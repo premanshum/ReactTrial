@@ -6,10 +6,10 @@ import { useState } from "react";
 function ExpenseItem(props) {
   const [title, setTitle] = useState(props.expense.title);
 
-  const clickHandler = (event) => {
-    setTitle("Update");
-    console.log(title);
-  };
+  // const clickHandler = (event) => {
+  //   setTitle("Update");
+  //   console.log(title);
+  // };
 
   return (
     <li>
