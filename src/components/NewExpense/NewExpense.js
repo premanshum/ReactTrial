@@ -14,6 +14,8 @@ const NewExpense = (props) => {
 
     console.log(expenseData);
 
+    // This component exposes an event/delegate called onAddExpense.
+    // This is delegate executes the function that was assigned to it (...in App.js)
     props.onAddExpense(expenseData);
     setButtonVisible(false);
   };

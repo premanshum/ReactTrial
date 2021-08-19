@@ -1,4 +1,4 @@
-import "./AddUser.css";
+import classes from "./AddUser.module.css";
 import React, { useState } from "react";
 import Card from "../UI/Card";
 import Button from "../UI/Button";
@@ -70,7 +70,7 @@ const AddUser = (props) => {
           message={errorState.message}
           onClickHandler={errorOkHandler}></ErrorDialog>}
 
-      <Card>
+      <Card className={classes.input}>
         <form onSubmit={submitHandler}>
           <div className="">
             <div className="">
@@ -82,9 +82,7 @@ const AddUser = (props) => {
               <input type='number' value={userInput.userAge} onChange={ageChangeHandler} />
             </div>
           </div>
-          <div className="">
-            <Button type="submit">Add</Button>
-          </div>
+          <Button type="submit">Add</Button>
         </form>
       </Card>
     </div>

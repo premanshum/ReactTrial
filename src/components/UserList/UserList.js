@@ -5,20 +5,20 @@ import classes from "./UserList.module.css";
 
 const UserList = (props) =>{    
 
-    return (
-        <Card>
-            <ul>
-            {
-                props.users.map(item=>{
-                  return(
-                    <li>
-                        {item.userName} is {item.userAge} old.
-                    </li>);
-                })
-            }
-            </ul>
-        </Card>
-    );
+  return (
+    <Card className={classes.users}>
+      <ul>
+      {
+        props.users.map(item=>{
+          return(
+            <li>
+                {item.userName} is {item.userAge} old.
+            </li>);
+        })
+      }
+      </ul>
+    </Card>
+  );
 };
 
 export default UserList;

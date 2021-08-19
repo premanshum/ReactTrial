@@ -40,8 +40,8 @@ const ExpenseForm = (props) => {
 
     console.log(expenseData);
 
-    // This component exposes an event/delegate, onSaveExpenseData.
-    // This is delegate executes the function that was assigned to it (in NewExpense.js)
+    // This component exposes an event/delegate called onSaveExpenseData.
+    // This is delegate executes the function that was assigned to it (...in NewExpense.js)
     props.onSaveExpenseData(expenseData);
 
     // Reset the user input values

@@ -2,7 +2,10 @@ import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 import AddUser from "./components/AddUser/AddUser";
 import UserList from './components/UserList/UserList';
-import { useState } from "react";
+import Login from './components/Login/Login';
+import React, { useEffect, useState } from "react";
+import MainHeader from "./components/MainHeader/MainHeader";
+import Home from './components/Home/Home';
 
 let DUMMY_EXPENSES = [
 {
@@ -34,16 +37,39 @@ let DUMMY_EXPENSES = [
 
 function App() {
 
-  //const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
+  const [feature, setFeature] = useState('3');
+  const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  
+  
 
-  // const addExpenseHandler = (expense) => {
-  //   setExpenses((prevState)=>{
-  //     return [
-  //       expense,
-  //       ...prevState
-  //     ]
-  //   });
-  // };
+  useEffect(()=>{
+    const storedUserLoginInfo = localStorage.getItem('isLoggedIn');
+    if(storedUserLoginInfo === '1'){
+      setIsLoggedIn(true);
+    }
+  }, []);
+
+  const loginHandler = (email, password) => {
+    // We should of course check email and password
+    // But it's just a dummy/ demo anyways
+    setIsLoggedIn(true);
+    localStorage.setItem('isLoggedIn', '1');
+  };
+
+  const logoutHandler = () => {
+    localStorage.setItem('isLoggedIn', '0');
+    setIsLoggedIn(false);
+  };
+
+  const addExpenseHandler = (expense) => {
+    setExpenses((prevState)=>{
+      return [
+        expense,
+        ...prevState
+      ]
+    });
+  };
 
   const [userList, setUserList] = useState([]);
 
@@ -53,20 +79,46 @@ function App() {
     });
   }
 
+  const selectChangeHandler = (event)=>{
+    event.preventDefault();
+    setFeature(event.target.value)
+  }
+
   return(
-    <div>
-      <AddUser onAddUser={addUserHandler}></AddUser>
-      <UserList users={userList}></UserList>
-    </div>
+    <React.Fragment>
+      <div>
+        <select onChange={selectChangeHandler}>
+          <option id='feat1' value='1' >1. Expense</option>
+          <option id='feat2' value='2'>2. Data Entry</option>
+          <option id='feat3' value='3' selected>3. Login</option>
+        </select>
+      </div>
+      {
+        feature === '1' && 
+        <div>
+          <NewExpense onAddExpense = {addExpenseHandler}></NewExpense>
+          <Expenses expenses={expenses}></Expenses>
+        </div>
+      }
+      {
+        feature === '2' && 
+        <div>
+          <AddUser onAddUser={addUserHandler}></AddUser>
+          <UserList users={userList}></UserList>
+        </div>
+      }
+      {
+        feature === '3' && 
+        <React.Fragment>
+          <MainHeader isAuthenticated={isLoggedIn} onLogout={logoutHandler} />
+          <main>
+            {!isLoggedIn && <Login onLogin={loginHandler} />}
+            {isLoggedIn && <Home onLogout={logoutHandler} />}
+          </main>
+        </React.Fragment>
+      }
+    </React.Fragment>
   );
-
-
-  // return (
-  //   <div>
-  //     <NewExpense onAddExpense = {addExpenseHandler}></NewExpense>
-  //     <Expenses expenses={expenses}></Expenses>
-  //   </div>
-  // );
 }
 
 export default App;
